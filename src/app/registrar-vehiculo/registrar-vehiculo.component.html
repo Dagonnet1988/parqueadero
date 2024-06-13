@@ -1,0 +1,17 @@
+<form (ngSubmit)="registrar()">
+  <br>
+  <label>Placa: </label>
+  <input [(ngModel)]="placa" name="placa" required>
+  <br>
+  <br>
+  <label>Cascos: </label>
+  <input [(ngModel)]="cascos" name="cascos" required >
+  <br>
+  <br>
+  <label>Puesto Cascos: </label>
+  <input [(ngModel)]="puestoCascos" name="puestoCascos" required >
+  <br>
+  <br>
+  <label></label>
+  <button type="submit">Registrar Vehículo</button>
+</form>

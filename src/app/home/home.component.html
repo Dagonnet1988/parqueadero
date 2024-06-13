@@ -1,0 +1,39 @@
+<label> Buscar </label>
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  (keyup)="search()"
+  placeholder="Buscar por placa..."
+/>
+
+<div class="p-grid" style="display: flex; flex-wrap: wrap">
+  <div
+    class="p-col-12 p-md-6 p-lg-4"
+    style="flex: 1 0 21%; margin: 1%"
+    *ngFor="let vehiculo of filteredVehicles">
+    <p-card>
+      <p>
+        Placa: <strong>{{ vehiculo.placa | uppercase }}</strong>
+      </p>
+      <p>
+        Hora de ingreso:
+        <strong>{{
+          vehiculo.tiempoEntrada | date : "MMM d, y, h:mm a"
+        }}</strong>
+      </p>
+      <p>
+        Valor hora:
+        <strong>{{
+          vehiculo.valorHora | currency : "USD" : "symbol" : "1.0-0"
+        }}</strong>
+      </p>
+      <p>
+        Codigo de barras:
+        <strong>{{ vehiculo.codigoBarras }}</strong>
+      </p>
+      <button (click)="registrarSalida(vehiculo.codigoBarras)">
+        Registrar Salida
+      </button>
+    </p-card>
+  </div>
+</div>

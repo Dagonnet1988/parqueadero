@@ -1,0 +1,10 @@
+<!-- src/app/registrar-salida/registrar-salida.component.html -->
+<form (ngSubmit)="registrarSalida()">
+  <br>
+  <br>
+  <label>Código de Barras: </label>
+  <br>
+  <br>
+  <input [(ngModel)]="codigoBarras" name="codigoBarras" required />
+  <button type="submit" >Registrar Salida</button>
+</form>
