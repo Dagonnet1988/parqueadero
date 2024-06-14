@@ -1,0 +1,23 @@
+<div style="display: flex; justify-content: center; margin-top: 20px">
+  <form (ngSubmit)="registrarSalida()">
+    <br />
+    <br />
+    <label>Código de Barras: </label>
+    <br />
+    <br />
+    <input [(ngModel)]="codigoBarras" name="codigoBarras" required style="width: 200px; height: 30px;" />
+    <button type="submit">Registrar Salida</button>
+  </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div style="display: flex; justify-content: center; margin-top: 20px">
+  <button
+    style="width: 200px; height: 100px; font-size: 24px; margin-right: 20px"
+    routerLink="/home"
+  >
+    Inicio
+  </button>
+</div>

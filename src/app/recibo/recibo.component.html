@@ -1,0 +1,34 @@
+<div id="recibo" class="receipt" style="text-align: center">
+  <h1>Parqueadero Providencia</h1>
+  <p>Calle 19 #17-29 Manizales</p>
+  <p><strong>Teléfono: </strong> 3104236044</p>
+  <div class="vehicle-info">
+    <h2>Información del vehículo</h2>
+    <p><strong>Placa:</strong> {{ vehiculo.placa | uppercase }}</p>
+    <p>
+      <strong>Tipo de vehiculo:</strong> {{ vehiculo.tipoVehiculo | uppercase }}
+    </p>
+    <p>
+      <strong>Hora de entrada:</strong>
+      {{ vehiculo.tiempoEntrada | date : "MMM d, y, h:mm a" }}
+    </p>
+  </div>
+  <div class="payment-info">
+    <h2>Información de pago</h2>
+    <p>
+      <strong>Precio por hora:</strong>
+      {{ vehiculo.valorHora | currency : "USD" : "symbol" : "1.0-0" }}
+    </p>
+  </div>
+  <div>
+    <img id="barcode">
+  </div>
+  <div>
+    <p>
+      <strong>Cantidad de cascos: {{ vehiculo.cascos }} </strong>
+    </p>
+    <p>
+      <strong>Puesto cascos: {{ vehiculo.puestoCascos }} </strong>
+    </p>
+  </div>
+</div>

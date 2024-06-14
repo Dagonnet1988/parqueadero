@@ -1,0 +1,48 @@
+<div id="recibo" class="receipt" style="text-align: center">
+  <h1>Parqueadero Providencia</h1>
+  <p>Calle 19 #17-29 Manizales</p>
+  <p><strong>Teléfono: </strong> 3104236044</p>
+  <div class="vehicle-info">
+    <h2>Información del vehículo</h2>
+    <h2>
+      <strong>Placa: {{ vehiculo.placa | uppercase }} </strong>
+    </h2>
+    <p>
+      <strong>Tipo de vehículo: </strong>
+      {{ vehiculo.tipoVehiculo | uppercase }}
+    </p>
+    <p>
+      <strong>Hora de entrada: </strong>
+      {{ vehiculo.tiempoEntrada | date : "MMM d, y, h:mm a" }}
+    </p>
+    <p>
+      <strong>Hora de salida: </strong>
+      {{ vehiculo.tiempoSalida | date : "MMM d, y, h:mm a" }}
+    </p>
+  </div>
+  <div class="payment-info">
+    <h2>Información de pago</h2>
+    <p>
+      <strong>Precio por hora: </strong>
+      {{ vehiculo.valorHora | currency : "USD" : "symbol" : "1.0-0" }}
+    </p>
+    <p>
+      <strong>Tiempo transcurrido: </strong>
+      {{ convertMinutesToHoursAndMinutes(vehiculo.tiempoTotal) }}
+    </p>
+    <h2>
+      <strong
+        >Total a pagar:
+        {{ vehiculo.valorTotal | currency : "USD" : "symbol" : "1.0-0" }}
+      </strong>
+    </h2>
+    <p><strong>Cascos: {{ vehiculo.cascos }}</strong></p>
+    <p><strong>Puesto cascos: {{ vehiculo.puestoCascos }}</strong></p>
+  </div>
+  <button
+    style="width: 200px; height: 100px; font-size: 24px; margin-right: 20px"
+    routerLink="/home"
+  >
+    Inicio
+  </button>
+</div>
